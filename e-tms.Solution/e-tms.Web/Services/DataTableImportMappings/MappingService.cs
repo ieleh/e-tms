@@ -56,8 +56,12 @@ namespace e_tms.Web.Services
             var list = asm.GetTypes()
                    .Where(type => typeof(Entity).IsAssignableFrom(type))
                    .SelectMany(type => type.GetProperties(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Public))
-                   .Where(m => !m.GetCustomAttributes(typeof(System.Runtime.CompilerServices.CompilerGeneratedAttribute), true).Any())
-                   .Select(x => new EntityInfo { EntitySetName = x.DeclaringType.Name, FieldName = x.Name, FieldTypeName = x.PropertyType.Name, IsRequired = x.GetCustomAttributes().Where(f => f.TypeId.ToString().IndexOf("Required") >= 0).Any() })
+                   .Select(x => new EntityInfo { EntitySetName = x.DeclaringType.Name,
+                       FieldName = x.Name, 
+                       FieldTypeName = x.PropertyType.Name,
+                       IsRequired = AttributeHelper.GetRequired(x.DeclaringType,x.Name),
+                       FieldDesc = AttributeHelper.GetDisplayName(x.DeclaringType,x.Name)
+                   })
                    .OrderBy(x => x.EntitySetName).ThenBy(x => x.FieldName)
                    .Where(x => x.EntitySetName == entityName && x.FieldTypeName!="ICollection`1").ToList();
             foreach (var item in list)
@@ -69,6 +73,8 @@ namespace e_tms.Web.Services
                 row.FieldName = item.FieldName;
                 row.IsRequired = item.IsRequired;
                 row.TypeName = item.FieldTypeName;
+                row.FieldDesc = item.FieldDesc;
+                row.IsEnabled = true;
                 this.Insert(row);
                 }
             }

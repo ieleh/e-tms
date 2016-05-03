@@ -36,5 +36,7 @@ namespace e_tms.Web.Models
         public DbSet<RoleMenu> RoleMenus { get; set; }
 
         public DbSet<DataTableImportMapping> DataTableImportMappings { get; set; }
+
+        public System.Data.Entity.DbSet<e_tms.Web.Models.Company> Companies { get; set; }
     }
 }

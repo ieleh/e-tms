@@ -21,7 +21,7 @@
     @Styles.Render("~/font-awesome/css")
     @Styles.Render("~/font-awesome3.2/css")
     @Styles.Render("~/easyui/css")
-    
+    @Styles.Render("~/uploadifive/css")
 </head>
 <body>
 
@@ -67,6 +67,8 @@
 
     <!-- easyui script-->
     @Scripts.Render("~/easyui/js")
+    <!-- uploadifive script-->
+    @Scripts.Render("~/uploadifive/js")
 
     <!-- Handler for local scripts -->
     @RenderSection("scripts", required: false)

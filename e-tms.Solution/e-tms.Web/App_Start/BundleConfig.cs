@@ -434,6 +434,15 @@ namespace e_tms.Web
                           ));
 
 
+                //uploadifive 1.2.2
+                bundles.Add(new StyleBundle("~/uploadifive/css").Include(
+                         "~/Scripts/uploadifive/uploadifive.css"));
+
+                bundles.Add(new ScriptBundle("~/uploadifive/js").Include(
+                         "~/Scripts/uploadifive/jquery.uploadifive.js"
+                         
+                         ));
+
             }
         }
     

@@ -23,20 +23,21 @@ namespace e_tms.Web.Controllers
      public class FileUploadController : Controller
     {
         //private readonly ISKUService  _sKUService;
-        //private readonly IBOMComponentService _iBOMComponentService;
-        //private readonly IUnitOfWorkAsync _unitOfWork;
+         private readonly ICompanyService _companyService;
+         private readonly IUnitOfWorkAsync _unitOfWork;
 
-        public FileUploadController(/*ISKUService sKUService, IBOMComponentService iBOMComponentService,IUnitOfWorkAsync unitOfWork*/)
+         public FileUploadController(ICompanyService companyService, IUnitOfWorkAsync unitOfWork  )
         {
             //_iBOMComponentService = iBOMComponentService;
             //_sKUService  = sKUService;
-            //_unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
+            _companyService = companyService;
         }
         //回单文件上传 文件名格式 回单+_+日期+_原始文件
         [HttpPost]
         public ActionResult Upload(HttpPostedFileBase Filedata)
         {
-            string fileType = "";
+            string modelType = "";
             //string date = "";
             //string filename = "";
             //string Lastfilename = "";
@@ -49,16 +50,16 @@ namespace e_tms.Web.Controllers
                 {
                     return this.HttpNotFound();
                 }
-                fileType = this.Request.Form["fileType"];
+                modelType = this.Request.Form["modelType"];
                 //date = this.Request.Form["date"];
                 //filename = this.Request.Form["filename"];
                 //Lastfilename = this.Request.Form["Lastfilename"];
-                //DataTable datatable =  ExcelHelper.GetDataTableFromExcel(Filedata.InputStream);
-                //if (fileType == "SKU")
-                //{
-                //    _sKUService.ImportDataTable(datatable);
-                //    _unitOfWork.SaveChanges();
-                //}
+                DataTable datatable = ExcelHelper.GetDataTableFromExcel(Filedata.InputStream);
+                if (modelType == "Company")
+                {
+                    _companyService.ImportDataTable(datatable);
+                    _unitOfWork.SaveChanges();
+                }
                 //if (fileType == "BOM")
                 //{
                 //    _iBOMComponentService.ImportDataTable(datatable);

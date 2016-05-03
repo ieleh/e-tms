@@ -20,6 +20,7 @@ namespace e_tms.Web.Models
         [Index("IX_DataTableImportMapping", IsUnique = true, Order = 2)]
         [MaxLength(50)]
         public string FieldName { get; set; }
+        public string FieldDesc { get; set; }
         public string DefaultValue { get; set; }
         public string TypeName { get; set; }
         public bool IsRequired { get; set; }
@@ -32,6 +33,7 @@ namespace e_tms.Web.Models
 	public partial class EntityInfo
     {
         public string EntitySetName { get; set; }
+        public string FieldDesc { get; set; }
         public string FieldName { get; set; }
         public string FieldTypeName { get; set; }
         public bool IsRequired { get; set; }
@@ -58,6 +60,9 @@ namespace e_tms.Web.Models
         [Display(Name = "字段名")]
         [MaxLength(50)]
         public string FieldName { get; set; }
+        [Display(Name = "字段描述")]
+        [MaxLength(50)]
+        public string FieldDesc { get; set; }
 
         [Display(Name = "类型")]
         [MaxLength(30)]

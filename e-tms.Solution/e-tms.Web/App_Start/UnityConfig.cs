@@ -76,8 +76,8 @@ namespace e_tms.Web.App_Start
             ////container.RegisterType<IRepositoryAsync<Order>, Repository<Order>>();
             ////container.RegisterType<IOrderService, OrderService>();
 
-            //container.RegisterType<IRepositoryAsync<Company>, Repository<Company>>();
-            //container.RegisterType<ICompanyService, CompanyService>();
+            container.RegisterType<IRepositoryAsync<Company>, Repository<Company>>();
+            container.RegisterType<ICompanyService, CompanyService>();
 
             //container.RegisterType<IRepositoryAsync<Department>, Repository<Department>>();
             //container.RegisterType<IDepartmentService, DepartmentService>();

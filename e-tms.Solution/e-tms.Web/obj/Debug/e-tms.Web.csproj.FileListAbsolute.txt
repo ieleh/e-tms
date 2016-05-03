@@ -86,3 +86,7 @@ D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\bin\LinqKit.pdb
 D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\bin\LinqKit.xml
 D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\obj\Debug\e_tms.Web.Migrations.init.resources
 D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\obj\Debug\e-tms.Web.csproj.GenerateResource.Cache
+D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\obj\Debug\e_tms.Web.Migrations.comp.resources
+D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\obj\Debug\e_tms.Web.Migrations.datatable.resources
+D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\bin\EPPlus.dll
+D:\e-tms\e-tms\e-tms.Solution\e-tms.Web\bin\EPPlus.xml
