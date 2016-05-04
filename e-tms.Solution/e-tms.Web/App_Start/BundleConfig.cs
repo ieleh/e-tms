@@ -152,7 +152,9 @@ namespace e_tms.Web
 
                 // validate 
                 bundles.Add(new ScriptBundle("~/plugins/validate").Include(
-                          "~/Scripts/plugins/validate/jquery.validate.min.js"));
+                          "~/Scripts/plugins/validate/jquery.validate.min.js",
+                          "~/Scripts/plugins/validate/jquery.validate.unobtrusive.min.js"
+                        ));
 
                 // fullCalendar styles
                 bundles.Add(new StyleBundle("~/plugins/fullCalendarStyles").Include(
