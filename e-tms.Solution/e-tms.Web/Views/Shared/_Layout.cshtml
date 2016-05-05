@@ -20,10 +20,39 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/font-awesome/css")
     @Styles.Render("~/font-awesome3.2/css")
+    @Styles.Render("~/plugins/dataPickerStyles")
     @Styles.Render("~/easyui/css")
     @Styles.Render("~/uploadifive/css")
+    <style>
+        .has-error input, .has-error select, .has-error textarea {
+                border: 1px solid #CE5454;
+                box-shadow: 0 0 4px -2px #CE5454;
+                position: relative;
+                left: 0;
+                -moz-animation: .7s 1 shake linear;
+                -webkit-animation: 0.7s 1 shake linear;
+            }
+    </style>
+    
 </head>
 <body>
+    <!-- Section for main scripts render -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/plugins/slimScroll")
+    @Scripts.Render("~/bundles/inspinia")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/plugins/dataPicker")
+
+
+    <!-- Skin config script - only for demo purpose-->
+    @Scripts.Render("~/bundles/skinConfig")
+
+    <!-- easyui script-->
+    @Scripts.Render("~/easyui/js")
+    <!-- uploadifive script-->
+    @Scripts.Render("~/uploadifive/js")
+
 
     <!-- Skin configuration box -->
      @Html.Partial("_SkinConfig")  
@@ -56,20 +85,8 @@
     </div>
     <!-- End wrapper-->
 
-    <!-- Section for main scripts render -->
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/plugins/slimScroll")
-    @Scripts.Render("~/bundles/inspinia")
 
-    <!-- Skin config script - only for demo purpose-->
-    @Scripts.Render("~/bundles/skinConfig")
-
-    <!-- easyui script-->
-    @Scripts.Render("~/easyui/js")
-    <!-- uploadifive script-->
-    @Scripts.Render("~/uploadifive/js")
-
+    <script src="~/Scripts/jquery.global.setting.js"></script>
     <!-- Handler for local scripts -->
     @RenderSection("scripts", required: false)
 </body>

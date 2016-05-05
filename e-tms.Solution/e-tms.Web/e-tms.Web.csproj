@@ -209,6 +209,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountManageController.cs" />
+    <Compile Include="Controllers\AppViewsController.cs" />
     <Compile Include="Controllers\BaseCodesController.cs" />
     <Compile Include="Controllers\CompaniesController.cs">
       <SubType>Code</SubType>
@@ -216,6 +217,7 @@
     <Compile Include="Controllers\DataTableImportMappingsController.cs" />
     <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailboxController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\MenuItemsController.cs" />
@@ -1772,6 +1774,7 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery.global.setting.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -2315,6 +2318,32 @@
     <Content Include="Scripts\uploadifive\index.php" />
     <Content Include="Scripts\uploadifive\uploadifive-image-only.php" />
     <Content Include="Scripts\uploadifive\uploadifive.php" />
+    <Content Include="Views\AppViews\Article.cshtml" />
+    <Content Include="Views\AppViews\Blog.cshtml" />
+    <Content Include="Views\AppViews\Calendar.cshtml" />
+    <Content Include="Views\AppViews\Clients.cshtml" />
+    <Content Include="Views\AppViews\Contacts.cshtml" />
+    <Content Include="Views\AppViews\Contacts2.cshtml" />
+    <Content Include="Views\AppViews\FAQ.cshtml" />
+    <Content Include="Views\AppViews\FileManager.cshtml" />
+    <Content Include="Views\AppViews\IssueTracker.cshtml" />
+    <Content Include="Views\AppViews\OutlookView.cshtml" />
+    <Content Include="Views\AppViews\PinBoard.cshtml" />
+    <Content Include="Views\AppViews\Profile.cshtml" />
+    <Content Include="Views\AppViews\Profile2.cshtml" />
+    <Content Include="Views\AppViews\ProjectDetail.cshtml" />
+    <Content Include="Views\AppViews\Projects.cshtml" />
+    <Content Include="Views\AppViews\SocialFeed.cshtml" />
+    <Content Include="Views\AppViews\TeamsBoard.cshtml" />
+    <Content Include="Views\AppViews\Timeline.cshtml" />
+    <Content Include="Views\AppViews\VoteList.cshtml" />
+    <Content Include="Views\Mailbox\AlertEmail.cshtml" />
+    <Content Include="Views\Mailbox\BasicActionEmail.cshtml" />
+    <Content Include="Views\Mailbox\BillingEmail.cshtml" />
+    <Content Include="Views\Mailbox\ComposeEmail.cshtml" />
+    <Content Include="Views\Mailbox\EmailTemplates.cshtml" />
+    <Content Include="Views\Mailbox\EmailView.cshtml" />
+    <Content Include="Views\Mailbox\Inbox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

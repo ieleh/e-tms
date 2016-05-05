@@ -156,7 +156,7 @@ namespace e_tms.Web.Controllers
         // POST: MenuItems/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Parent,SubMenus,Id,Title,Description,Code,Url,IconCls,IsEnabled,ParentId,Action,Controller")] MenuItem menuItem)
         {
             if (ModelState.IsValid)
