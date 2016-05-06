@@ -47,6 +47,7 @@ namespace e_tms.Web.Controllers
 
         public ApplicationSignInManager SignInManager
         {
+           
             get
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
@@ -55,6 +56,8 @@ namespace e_tms.Web.Controllers
         }
         public ActionResult Index()
         {
+            
+
             return View();
         }
         // Get :AccountManager/PageList

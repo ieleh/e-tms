@@ -132,7 +132,7 @@ namespace e_tms.Web
     {
         static object sync = new object();
 
-        public static T Data<T>(this Cache cache, string cacheKey, int expirationSeconds, Func<T> method)
+        public static T Add<T>(this System.Web.Caching.Cache cache, string cacheKey, int expirationSeconds, Func<T> method)
         {
             var data = cache == null ? default(T) : (T)cache[cacheKey];
             if (data == null)
@@ -149,7 +149,27 @@ namespace e_tms.Web
             }
             return data;
         }
+
+
+        public static T Get<T>(this System.Web.Caching.Cache cache, string key, Func<T> method) where T : class
+        {
+            var data = cache == null ? default(T) : (T)cache[key];
+            if (data == null)
+            {
+                data = method();
+
+                if (1000 > 0 && data != null)
+                {
+                    lock (sync)
+                    {
+                        cache.Insert(key, data, null, DateTime.Now.AddSeconds(1000), Cache.NoSlidingExpiration);
+                    }
+                }
+            }
+            return data;
+        }
     }
+
     public static class HMTLHelperExtensions
     {
 
